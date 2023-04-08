@@ -1,8 +1,20 @@
-const checkGameWin = () => {
-    // convert the array to string to use regex and do various tests
-    // ex
-    // [X||O],[X||O],[X||O],[],[],[],[],[],[] WIN
-    // [X||O],[X||O],[X||O],[],[],[],[],[],[] WIN
-    // [X||O],[X||O],[X||O],[],[],[],[],[],[] WIN
+const checkGameWin = (gameArray) => {
+    const gameArrayString = gameArray.join("")
+    console.log(gameArrayString)
+    const regexList = [
+        /^(?:OXO)/mg, // XXX ??? ???
+  
+         '',]
+    
+    for (const regex in regexList){
+        if(/^(?:XXX)/mg.test(gameArrayString)){
+            return true;
+        }
+    }
+
+    return false;
+
 
 }
+
+export default checkGameWin;

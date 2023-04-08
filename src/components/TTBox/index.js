@@ -1,8 +1,8 @@
 import './styles.css'
 
-const TTBox = ({playerMark}) => {
+const TTBox = ({playerMark, action}) => {
     return (
-        <div className="ticbox">
+        <div className="ticbox" onClick={action}>
             {playerMark}
         </div>
     )
