@@ -14,11 +14,12 @@ const TicTacToeGame = ({p1Name, p2Name}) => {
     ]);
    
     const handleGameTurn = (index) => {
+        if (winner) { return; }
         let tempTacToe = [...tttBoard];
         playerTurn ? tempTacToe[index] = "X" : tempTacToe[index] = "O"
         setTttBoard(tempTacToe);
         if (checkGameWin(tempTacToe)){
-            console.log("winning turn, ", playerTurn);
+           playerTurn ? setWinner(p2Name) : setWinner(p1Name)
         }
         setCurrentTurn(currentTurn + 1);
         setPlayerTurn(!playerTurn);
@@ -33,6 +34,11 @@ const TicTacToeGame = ({p1Name, p2Name}) => {
                    return <TTBox key={i} playerMark={val} action={() => handleGameTurn(i)} />
                 })
             }
+
+            {winner ? <h1>{winner}, you win!</h1> : (
+              playerTurn ? <h1>{p2Name} 'X', your turn!</h1> : <h1>{p1Name} 'O', your turn!</h1>
+                
+    )}
         </div>
     )
 }

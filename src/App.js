@@ -5,7 +5,7 @@ import TicTacToeGame from './components/TicTacToeGame';
 function App() {
   return (
     <div className="App">
-      <TicTacToeGame />
+      <TicTacToeGame p1Name={"Donte"} p2Name={"Nick"} />
      
     </div>
   );
