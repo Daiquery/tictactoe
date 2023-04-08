@@ -1,0 +1,12 @@
+.ticbox {
+    font-size: 4rem;
+    height: 5rem;
+    width: 5rem;
+    border-style: solid;
+    border: 2px;
+    border-color: black;
+    background-color: gainsboro;
+    text-align: center;
+    justify-content: center;
+   
+}
