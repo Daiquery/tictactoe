@@ -7,6 +7,11 @@
   pointer-events: none;
 }
 
+body {
+  background-color: #8EC5FC;
+background-image: linear-gradient(62deg, #8EC5FC 0%, #E0C3FC 100%);
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
@@ -35,4 +40,24 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+.gameInitForm {
+  padding: 2rem;
+  font-size: 25px;
+}
+
+.gameInitForm input {
+  margin: 2rem;
+  font-size: 25px;
+}
+
+.gameInitForm button {
+  background-color: black;
+  font-size: 25px;
+  border: none;
+  color: white;
+  padding: 15px 30px;
+  text-align: center;
+  text-decoration: none;
 }

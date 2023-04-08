@@ -14,8 +14,8 @@ const TicTacToeGame = ({p1Name, p2Name}) => {
     ]);
    
     const handleGameTurn = (index) => {
-        if (winner) { return; }
         let tempTacToe = [...tttBoard];
+        if (winner || tempTacToe[index] != ' ') { return; } 
         playerTurn ? tempTacToe[index] = "X" : tempTacToe[index] = "O"
         setTttBoard(tempTacToe);
         if (checkGameWin(tempTacToe)){
@@ -28,18 +28,22 @@ const TicTacToeGame = ({p1Name, p2Name}) => {
     }
 
     return (
-        <div className="game">
+        <>
+             <div className="game">
             {
                tttBoard.map((val, i) => {
                    return <TTBox key={i} playerMark={val} action={() => handleGameTurn(i)} />
                 })
             }
 
-            {winner ? <h1>{winner}, you win!</h1> : (
+        </div>
+
+        {winner ? <h1>{winner}, you win!</h1> : (
               playerTurn ? <h1>{p2Name} 'X', your turn!</h1> : <h1>{p1Name} 'O', your turn!</h1>
                 
     )}
-        </div>
+        </>
+   
     )
 }
 
