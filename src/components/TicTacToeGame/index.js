@@ -5,6 +5,7 @@ import checkGameWin from "../../spc/checkGameWin";
 
 const TicTacToeGame = ({p1Name, p2Name}) => {
     const [winner, setWinner] = useState('')
+    const [tie, setTie] = useState(0)
     const [currentTurn, setCurrentTurn] = useState(0)
     const [playerTurn, setPlayerTurn] = useState(0);
     const [tttBoard, setTttBoard] = useState([
@@ -23,7 +24,9 @@ const TicTacToeGame = ({p1Name, p2Name}) => {
         }
         setCurrentTurn(currentTurn + 1);
         setPlayerTurn(!playerTurn);
-        
+        if (tempTacToe.join('').replace(/\s+/g, '').length === 9) {
+            setTie(1);
+        }
 
     }
 
@@ -38,10 +41,12 @@ const TicTacToeGame = ({p1Name, p2Name}) => {
 
         </div>
 
-        {winner ? <h1>{winner}, you win!</h1> : (
+{tie ? <h1>Tie! No winner.</h1> : (winner ? <h1>{winner}, you win!</h1> : (
               playerTurn ? <h1>{p2Name} 'X', your turn!</h1> : <h1>{p1Name} 'O', your turn!</h1>
                 
-    )}
+    ))
+    }
+        
         </>
    
     )
