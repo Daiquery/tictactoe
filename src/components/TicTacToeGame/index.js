@@ -8,9 +8,9 @@ const TicTacToeGame = ({p1Name, p2Name}) => {
     const [currentTurn, setCurrentTurn] = useState(0)
     const [playerTurn, setPlayerTurn] = useState(0);
     const [tttBoard, setTttBoard] = useState([
-        [''],[''],[''],
-        [''],[''],[''],
-        [''],[''],[''],
+        [' '],[' '],[' '],
+        [' '],[' '],[' '],
+        [' '],[' '],[' '],
     ]);
    
     const handleGameTurn = (index) => {
@@ -22,6 +22,7 @@ const TicTacToeGame = ({p1Name, p2Name}) => {
         }
         setCurrentTurn(currentTurn + 1);
         setPlayerTurn(!playerTurn);
+        
 
     }
 
