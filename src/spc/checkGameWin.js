@@ -1,6 +1,5 @@
 const checkGameWin = (gameArray) => {
     const gameArrayString = gameArray.join("")
-    console.log(gameArrayString)
     const regexList = [
         // horizontal cases
         /^(?:OOO|XXX)/mg, // (WWW) ??? ???
